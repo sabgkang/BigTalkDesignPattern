@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "大話02-strategy", "大話02-strategy\大話02-strategy.csproj", "{10DA72CC-5AB6-495C-A396-300A1422DF5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10DA72CC-5AB6-495C-A396-300A1422DF5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DA72CC-5AB6-495C-A396-300A1422DF5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DA72CC-5AB6-495C-A396-300A1422DF5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DA72CC-5AB6-495C-A396-300A1422DF5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEC2DF30-9526-4114-B236-8F8D1ABD6DD7}
+	EndGlobalSection
+EndGlobal
