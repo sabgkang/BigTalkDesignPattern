@@ -4,73 +4,119 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace 大話03_Decorate
+namespace 大話_Decorate
 {
     class Program
     {
         static void Main(string[] args)
         {
+
             Person person = new Person("John");
 
-            TShirt tShirt = new TShirt();
-            Sneaker sneaker = new Sneaker();
+            TShirts tShirt = new TShirts();
+            BigTrouser bigTrouser = new BigTrouser();
+            Sneakers sneaker = new Sneakers();
+            Suit suit = new Suit();
+            Tie tie = new Tie();
+            LeatherShoe leatherShoe = new LeatherShoe();
+
             tShirt.Decorate(person);
-            sneaker.Decorate(tShirt);  
+            sneaker.Decorate(tShirt);
+            //bigTrouser.Decorate(tShirt);
+
+
             sneaker.Show();
 
             Console.ReadKey();
         }
     }
 
-    class Finery
+    class Person
     {
-        public string item = "";
-        public Finery finery = null;
-        public void Decorate(Finery finery)
-        {
-            this.finery = finery;
-        }
-
-        public virtual void Show()
-        {
-            Console.Write("2:" + item);
-            this.finery.Show();
-        }
-    }
-
-    class Person : Finery
-    {
-        private string name = "";
         public Person() { }
+
+        public string name;
         public Person(string name)
         {
             this.name = name;
         }
+        public virtual void Show()
+        {
+            Console.WriteLine("裝扮的{0}", name);
+        }
+    }
+
+    class Finery : Person
+    {
+        protected Person person;
+
+
+        public void Decorate(Person person)
+        {
+            this.person = person;
+        }
 
         public override void Show()
         {
-            Console.WriteLine("{0}的裝扮", name);
+            if (person != null)
+            {
+                person.Show();
+            }
         }
-
     }
 
-    class TShirt : Finery
+    class TShirts : Finery
     {
-        //public Finery finery = null;
-
-        public TShirt()
+        public override void Show()
         {
-            item = "TShirt ";
+            Console.Write("大T恤 ");
+            base.Show();
         }
     }
 
-    class Sneaker : Finery
+    class BigTrouser : Finery
     {
-        //public Finery finery = null;
-
-        public Sneaker()
+        public override void Show()
         {
-            item = "Sneaker ";
+            Console.Write("垮褲 ");
+            base.Show();
         }
     }
+
+    class Sneakers : Finery
+    {
+        public override void Show()
+        {
+            Console.Write("破球鞋 ");
+            base.Show();
+        }
+    }
+
+    class Suit : Finery
+    {
+        public override void Show()
+        {
+            Console.Write("西裝 ");
+            base.Show();
+        }
+    }
+
+    class Tie : Finery
+    {
+        public override void Show()
+        {
+            Console.Write("領帶 ");
+            base.Show();
+        }
+    }
+
+    class LeatherShoe : Finery
+    {
+        public override void Show()
+        {
+            Console.Write("皮鞋 ");
+            base.Show();
+        }
+    }
+
 }
